@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+
+    <a href="/logout">Logout</a>
+    
+    <h1>Admin Dashboard</h1>
+
+    <h2>All Users</h2>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+        </tr>
+
+        {% for user in users %}
+        <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+            <td>{{ user[2] }}</td>
+            <td>{{ user[3] }}</td>
+        </tr>
+
+    <h2>Failed Login Attempts</h2>
+
+<table border="1">
+    <tr>
+        <th>Email</th>
+        <th>Attempts</th>
+        <th>Status</th>
+        <th>Remaining Time</th>
+    </tr>
+
+    {% for email, data in attempts_data.items() %}
+    <tr>
+        <td>{{ email }}</td>
+        <td>{{ data['count'] }}</td>
+
+        {% if data['remaining'] %}
+            <td>Locked</td>
+            <td>{{ remaining }} seconds</td>
+        {% else %}
+            <td>Active</td>
+            <td>—</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
