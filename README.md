@@ -58,6 +58,12 @@ This project is a secure authentication system built using Flask and SQLite. It 
 
 ## 📸 Screenshots
 
+![Login Page](screenshots/login.png)
+![Register Page](screenshots/register.png)
+![Admin Dashboard](screenshots/admin.png)
+![Lockout](screenshots/lockout.png)
+![User Dashboard](screenshots/user.png)
+
 (Add screenshots here)
 
 ---
